@@ -23,9 +23,11 @@ pipeline {
         }
 
         stage('Test') {
-            sh '''
-                npm test run -f build
-            '''
+            steps {
+                sh '''
+                    npm test run -f build
+                '''
+            }
         }
     }
 }
