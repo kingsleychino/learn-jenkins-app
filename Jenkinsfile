@@ -20,6 +20,12 @@ pipeline {
                     ls -la
                 '''
             }
-        }     
+        }
+
+        stage('test') {
+            sh '''
+                npm run test -f build
+            '''
+        }
     }
 }
