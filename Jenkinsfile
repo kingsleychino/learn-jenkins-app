@@ -16,7 +16,7 @@ pipeline {
             }
 
             step {
-                sh 'echo "With docker'
+                sh 'echo "With docker"'
             }
         }     
     }
