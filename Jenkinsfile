@@ -16,7 +16,10 @@ pipeline {
             }
 
             steps {
-                sh 'echo "With docker"'
+                sh '''
+                    echo "With docker"
+                    npm --version
+                '''
             }
         }     
     }
