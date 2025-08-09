@@ -24,7 +24,7 @@ pipeline {
 
         stage('test') {
             sh '''
-                npm run test -f build
+                npm test run -f build
             '''
         }
     }
