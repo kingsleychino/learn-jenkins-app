@@ -2,9 +2,6 @@ pipeline {
     agent any
 
     stages {
-        docker {
-            image: 'node:18-alpine'
-        }
         stage('w/o docker') {
             steps {
                 echo 'Without docker'
@@ -12,6 +9,11 @@ pipeline {
         }
 
         stage('w docker') {
+            agent {
+                docker {
+                    image: 'node:18-alpine'
+                }
+            }
             steps {
                 echo 'With docker'
                 sh 'npm install'
