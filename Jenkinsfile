@@ -12,13 +12,15 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-alpine'
+                    reuseNode true
                 }
             }
             steps {
-                echo 'With docker'
-                sh 'npm install'
-                sh 'node --version'
-                sh 'npm --version'
+                sh '''
+                    echo "With docker"
+                    ls -la
+                    touch container-yes.txt
+                '''
             }
         }
     }
