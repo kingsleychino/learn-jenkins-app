@@ -39,6 +39,7 @@ pipeline {
                             npm test
                         '''
                     }
+                    
                     post {
                         always {
                             junit 'jest-results/junit.xml'
@@ -60,6 +61,12 @@ pipeline {
                             sleep 10
                             npx playwright test  --reporter=html
                         '''
+                    }
+                    
+                    post {
+                        always {
+                            junit 'jest-results/junit.xml'
+                        }
                     }
                 }
             }
